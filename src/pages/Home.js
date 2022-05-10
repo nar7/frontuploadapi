@@ -5,7 +5,9 @@ function Home() {
   const [data, setData] = useState();
   useEffect(() => {
     const getData = () => {
-      axios.get("http://localhost:8000/").then((res) => setData(res.data));
+      axios
+        .get("https://uploadapiexpress.herokuapp.com/")
+        .then((res) => setData(res.data));
     };
     getData();
   }, []);

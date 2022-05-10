@@ -13,7 +13,7 @@ function Uploads() {
     data.append("name", name);
     try {
       axios
-        .post("http://localhost:8000/create/", data)
+        .post("https://uploadapiexpress.herokuapp.com/create/", data)
         .then((res) => {
           console.log(res.data);
           navigate("/");
