@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <div>
       <div className=" flex justify-between  py-4 px-4  md:px-0 items-center ">
-        <Link to={"/"} className=" font-bold brand text-4xl">
+        <Link to={"/"} className=" font-bold brand text-4xl text-indigo-800">
           Galerie
         </Link>
         <ul className="flex space-x-6 text-blue-500">

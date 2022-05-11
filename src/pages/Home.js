@@ -4,10 +4,10 @@ import img from "../assets/IMG-20210511-WA0038.jpg";
 function Home() {
   const [data, setData] = useState();
   useEffect(() => {
-    const getData = () => {
-      axios
-        .get("https://uploadapiexpress.herokuapp.com/")
-        .then((res) => setData(res.data));
+    const getData = async () => {
+      await axios("https://uploadapiexpress.herokuapp.com").then((res) => {
+        setData(res.data);
+      });
     };
     getData();
   }, []);
@@ -20,7 +20,10 @@ function Home() {
         <Suspense fallback={<h1>Loading ...</h1>}>
           {data &&
             data.map((elt) => (
-              <div className="p-2 lg:w-1/3 md:w-1/2 xl:w-1/4 shadow">
+              <div
+                key={elt._id}
+                className="p-2 lg:w-1/3 md:w-1/2 xl:w-1/4 shadow"
+              >
                 <img
                   className=" object-cover photo"
                   src={elt.avatar}
