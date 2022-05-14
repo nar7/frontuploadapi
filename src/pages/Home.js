@@ -1,6 +1,7 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import img from "../assets/IMG-20210511-WA0038.jpg";
+import Skeleton from "../components/Skeleton";
 function Home() {
   const [data, setData] = useState();
   useEffect(() => {
@@ -17,21 +18,19 @@ function Home() {
       <p className=" text-6xl text-blue-400">Home</p>
       <div className="content w-full justify-center md:justify-start   mt-10 flex flex-wrap ">
         {/* CARD */}
-        <Suspense fallback={<h1>Loading ...</h1>}>
-          {data &&
-            data.map((elt) => (
-              <div
-                key={elt._id}
-                className="p-2 lg:w-1/3 md:w-1/2 xl:w-1/4 shadow"
-              >
-                <img
-                  className=" object-cover photo"
-                  src={elt.avatar}
-                  alt="ici"
-                />
-              </div>
-            ))}
-        </Suspense>
+
+        {data ? (
+          data.map((elt) => (
+            <div
+              key={elt._id}
+              className="p-2 lg:w-1/3 md:w-1/2 xl:w-1/4 shadow"
+            >
+              <img className=" object-cover photo" src={elt.avatar} alt="ici" />
+            </div>
+          ))
+        ) : (
+          <Skeleton />
+        )}
       </div>
     </div>
   );
