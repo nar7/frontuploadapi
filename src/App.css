@@ -1,24 +1,25 @@
-.container{
-    width: calc(100%-80px);;
-    margin: 0 auto;
-    height: 100vh;
-    position: relative;
- }
- .file{
-     z-index: 15;
- }
-
- i{
-     font-size: 30px !important;
- }
- .photo {
-    height: 400px;
-    width: 400px; 
+.container {
+  width: calc(100%-80px);
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+}
+.file {
+  z-index: 15;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
+i {
+  font-size: 30px !important;
 }
-.brand{
-    font-family: 'Dancing Script', cursive;
+.photo {
+  height: 400px;
+  min-width: 380px;
+  padding: 1rem;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+.brand {
+  font-family: "Dancing Script", cursive;
 }

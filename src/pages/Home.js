@@ -21,11 +21,12 @@ function Home() {
 
         {data ? (
           data.map((elt) => (
-            <div
-              key={elt._id}
-              className="p-2 lg:w-1/3 md:w-1/2 xl:w-1/4 shadow"
-            >
-              <img className=" object-cover photo" src={elt.avatar} alt="ici" />
+            <div key={elt._id} className="md:p-2 lg:w-1/3 md:w-1/2 xl:w-1/4 ">
+              <img
+                className=" object-cover w-full  photo "
+                src={elt.avatar}
+                alt="ici"
+              />
             </div>
           ))
         ) : (
